@@ -566,9 +566,7 @@ extension Home {
                         RoundedRectangle(cornerRadius: 8, style: .continuous)
                             .fill(Color(UIColor.darkGray))
                     )
-                    .onTapGesture {
-                        isStatusPopupPresented = false
-                    }
+                    
                     .gesture(
                         DragGesture(minimumDistance: 10, coordinateSpace: .local)
                             .onEnded { value in
@@ -579,7 +577,13 @@ extension Home {
                     )
             }
         }
-
+        // other code
+            .onTapGesture {
+                if state.isStatusPopupPresented {
+                    state.isStatusPopupPresented = false
+    }
+}
+```
         private var popup: some View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(state.statusTitle).font(.headline).foregroundColor(.white)
