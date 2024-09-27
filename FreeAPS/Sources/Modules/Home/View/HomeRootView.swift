@@ -583,7 +583,7 @@ extension Home {
                     state.isStatusPopupPresented = false
     }
 }
-```
+
         private var popup: some View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(state.statusTitle).font(.headline).foregroundColor(.white)
